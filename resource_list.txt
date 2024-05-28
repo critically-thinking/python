@@ -1,0 +1,44 @@
+MULTI-DIMENSIONAL LISTS IN PYTHON
+https://www.tutorialspoint.com/multi-dimensional-lists-in-python
+
+Two-dimensional lists (arrays) (very descriptive + examples)*
+https://snakify.org/en/lessons/two_dimensional_lists_arrays/
+==================================
+
+
+NESTED LISTS:
+https://www.freecodecamp.org/news/list-within-a-list-in-python-initialize-a-nested-list/
+
+NEWLINE CHARACTER PYTHON
+https://www.freecodecamp.org/news/python-new-line-and-how-to-python-print-without-a-newline/
+
+
+=====================================
+LIST COMPREHENSIONS:
+https://www.w3schools.com/python/python_lists_comprehension.asp
+
+=====================================
+RANGE FUNCTION PYTHON (range())
+https://www.w3schools.com/python/ref_func_range.asp
+
+===================================
+Tic-Tac-Toe requirements:
+1. Board should  be stored as a three-element list.
+- Each element should represent a separate 3 element list
+- The inner (nested) lists should represent rows
+
+Example syntax:
+
+gameBoard=[[1,2,3]for i in range(4)] <--- THIS WORKS!
+==============================
+
+
+
+
+
+
+==============================
+===================
+
+Modulo operator Python
+https://www.freecodecamp.org/news/the-python-modulo-operator-what-does-the-symbol-mean-in-python-solved/
