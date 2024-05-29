@@ -43,17 +43,30 @@ def display_board(board):
 
 
 # enter_move()
-# Accepts board status
-# requests move from user: PC ALWAYS GETS 1ST MOVE W/ X @ board[1][1]
+# Accepts board status (x)
+# requests move from user: PC ALWAYS GETS 1ST MOVE W/ X @ board[1][1] (x)
 # checks validity of userinput
 # update board per user input
 # return updated gameBoard
 def enter_move(board) ->tuple[list, int]:
-    # Assign PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
-    board[1][1] = xPlayer
-    num_Moves = 0 # total number of game moves caps at 8 (9-1)
+    num_Moves =0
+    for i in range(len(board)):        
+        #columns
+        for j in range(len(board[i])):
+            #PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
+            board[1][1] = xPlayer
     num_Moves = num_Moves + 1
     print("total moves in game: ", num_Moves)
+    
+    
+        
+    #board[1][1] = xPlayer
+    #num_Moves = 0 # total number of game moves caps at 8 (9-1)
+
+    # Request move from user
+    """ humanInput = int(input("select number to mark position on board: "))
+    board[i][humanInput] = oPlayer """
+    #pcInput =
 
     """ if num_Moves % 2 == 1:
         print(num_Moves) """
