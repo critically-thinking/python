@@ -52,27 +52,34 @@ def display_board(board):
 # return updated gameBoard
 def enter_move(board) ->tuple[list, int]:
     
-    num_Moves = 1
-    if num_Moves % 2 == 1:
-        player = xPlayer
-        board[1][1] = xPlayer
-    elif num_Moves % 2 == 0:
+    num_Moves = 1 # num_moves
+    if num_Moves % 2 == 1: # PC plays as X
         player = oPlayer
-    print("PLAYER" + player + "make your move!")
-    i = int(input("row number 0-2: "))
-    j = int(input("column number 0-2: "))
+        print("PLAYER" + player + "make your move!")
+        i = int(input("row number 0-2: "))
+        j = int(input("column number 0-2: "))
+        board[i][j] = oPlayer
 
-    if player == xPlayer:
+    elif num_Moves % 2 == 0: # human plays as O
+        player = xPlayer
+        print("PLAYER" + player + "make your move!")
+        i = int(input("row number 0-2: "))
+        j = int(input("column number 0-2: "))
+        board[i][j] = xPlayer
+    
+    num_Moves = num_Moves + 1
+
+    """ if player == xPlayer:
         board[i][j] = xPlayer
     else:
-        board[i][j] = oPlayer
+        board[i][j] = oPlayer """
         
     """ for i in range(len(board)):        
         #columns
         for j in range(len(board[i])):
             #PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
             board[1][1] = xPlayer """
-    num_Moves = num_Moves + 1
+   # num_Moves = num_Moves + 1
     print("total moves in game: ", num_Moves)
     
     
