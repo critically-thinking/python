@@ -49,12 +49,27 @@ def display_board(board):
 # update board per user input
 # return updated gameBoard
 def enter_move(board) ->tuple[list, int]:
-    num_Moves =0
-    for i in range(len(board)):        
+
+    num_Moves = 1
+    if num_Moves % 2 == 1:
+        player = xPlayer
+        board[1][1] = xPlayer
+    elif num_Moves % 2 == 0:
+        player = oPlayer
+    print("PLAYER" + player + "make your move!")
+    i = int(input("row number 0-2: "))
+    j = int(input("column number 0-2: "))
+
+    if player == xPlayer:
+        board[i][j] = xPlayer
+    else:
+        board[i][j] = oPlayer
+        
+    """ for i in range(len(board)):        
         #columns
         for j in range(len(board[i])):
             #PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
-            board[1][1] = xPlayer
+            board[1][1] = xPlayer """
     num_Moves = num_Moves + 1
     print("total moves in game: ", num_Moves)
     
@@ -67,9 +82,6 @@ def enter_move(board) ->tuple[list, int]:
     """ humanInput = int(input("select number to mark position on board: "))
     board[i][humanInput] = oPlayer """
     #pcInput =
-
-    """ if num_Moves % 2 == 1:
-        print(num_Moves) """
     return board, num_Moves
 
 """ def countMoves(board):
