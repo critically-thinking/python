@@ -42,15 +42,24 @@ def display_board(board):
 
 
 
-# makeMove()
-# Computer always gets first move @ center of board  with symbol 'x' (gameBoard[1][1])
-""" def firstMove(board):
+# enter_move()
+# Accepts board status
+# requests move from user: PC ALWAYS GETS 1ST MOVE W/ X @ board[1][1]
+# checks validity of userinput
+# update board per user input
+# return updated gameBoard
+def enter_move(board):
+    # Assign PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
     board[1][1] = xPlayer
-    board[0][1] = oPlayer
-    # no need to pop value from board, we can track winner based on index positions
-    return board """
+    num_Moves = 0 # total number of game moves caps at 8 (9-1)
+    num_Moves = num_Moves + 1
+    print("total moves in game: ", num_Moves)
 
-def countMoves(board):
+    """ if num_Moves % 2 == 1:
+        print(num_Moves) """
+    return board
+
+""" def countMoves(board):
     count = 0
     #rows
     for i in range(len(board)):        
@@ -58,7 +67,7 @@ def countMoves(board):
         for j in range(len(board[i])):
             if board[i][j] == 'x' or  board[i][j] == 'o':
                 count = count + 1
-    print("number of moves: ", count)
+    print("number of moves: ", count) """
             
             # print gameBoard[rowNum][columnNum]
 ##            print(board[i][j])
@@ -81,13 +90,11 @@ def main():
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
 
-    #boardStatus= firstMove(board) #return game board after PC makes first moves
-    #print("game board after first move", boardStatus)
-
+    boardStatus = enter_move(board) #return game board after PC makes first moves
+    print("game board after first move", boardStatus)
+    #print("total # of moves ", count)
 
     #countMoves(board)
-
-    
 
 main()
 
