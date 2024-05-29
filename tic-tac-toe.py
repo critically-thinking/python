@@ -48,7 +48,7 @@ def display_board(board):
 # checks validity of userinput
 # update board per user input
 # return updated gameBoard
-def enter_move(board):
+def enter_move(board) ->tuple[list, int]:
     # Assign PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
     board[1][1] = xPlayer
     num_Moves = 0 # total number of game moves caps at 8 (9-1)
@@ -57,7 +57,7 @@ def enter_move(board):
 
     """ if num_Moves % 2 == 1:
         print(num_Moves) """
-    return board
+    return board, num_Moves
 
 """ def countMoves(board):
     count = 0
@@ -90,9 +90,9 @@ def main():
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
 
-    boardStatus = enter_move(board) #return game board after PC makes first moves
+    boardStatus, totalMoves = enter_move(board) #return game board after PC makes first moves
     print("game board after first move", boardStatus)
-    #print("total # of moves ", count)
+    print("total # of moves ", totalMoves)
 
     #countMoves(board)
 
