@@ -96,7 +96,7 @@ def enter_move(board) ->tuple[list, int]:
 ##    else:
 ##        print("available spaces are" ,i)
 
-def make_lisf_of_free_fields(board):
+def make_list_of_free_fields(board):
     None
     # analyzes board status to build list of fields available to play
 
