@@ -68,29 +68,6 @@ def enter_move(board) ->tuple[list, int]:
         board[i][j] = xPlayer
     
     num_Moves = num_Moves + 1
-
-    """ if player == xPlayer:
-        board[i][j] = xPlayer
-    else:
-        board[i][j] = oPlayer """
-        
-    """ for i in range(len(board)):        
-        #columns
-        for j in range(len(board[i])):
-            #PC ALWAYS GETS 1ST MOVE W/ X @ center of board [board[1][1]]
-            board[1][1] = xPlayer """
-   # num_Moves = num_Moves + 1
-    print("total moves in game: ", num_Moves)
-    
-    
-        
-    #board[1][1] = xPlayer
-    #num_Moves = 0 # total number of game moves caps at 8 (9-1)
-
-    # Request move from user
-    """ humanInput = int(input("select number to mark position on board: "))
-    board[i][humanInput] = oPlayer """
-    #pcInput =
     return board, num_Moves
 
 """ def countMoves(board):
@@ -119,13 +96,18 @@ def enter_move(board) ->tuple[list, int]:
 ##    else:
 ##        print("available spaces are" ,i)
 
+def make_lisf_of_free_fields(board):
+    None
+    # analyzes board status to build list of fields available to play
+
 # Main Function
 def main():
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
     print("I,(the computer) have taken the firstmove. You have no say in the matter!")
 
-    boardStatus, totalMoves = enter_move(board) #return game board after PC makes first moves
+    # return updated game board after PC makes first move
+    boardStatus, totalMoves = enter_move(board) 
     print("game board after first move", boardStatus)
     print("total # of moves ", totalMoves)
 
