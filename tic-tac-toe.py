@@ -15,8 +15,10 @@ gameBoard=[[1,2,3],[4,5,6],[7,8,9]]
     # print board status to console
 def display_board(board):
 
+    # initialize second row/ center column with "X" (PCgets first of game)
+    board[1][1] = xPlayer
+    
     #Check board status
-    count = 0
     #rows
     for i in range(len(board)):        
         #columns
@@ -49,7 +51,7 @@ def display_board(board):
 # update board per user input
 # return updated gameBoard
 def enter_move(board) ->tuple[list, int]:
-
+    
     num_Moves = 1
     if num_Moves % 2 == 1:
         player = xPlayer
@@ -114,6 +116,7 @@ def enter_move(board) ->tuple[list, int]:
 def main():
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
+    print("I,(the computer) have taken the firstmove. You have no say in the matter!")
 
     boardStatus, totalMoves = enter_move(board) #return game board after PC makes first moves
     print("game board after first move", boardStatus)
