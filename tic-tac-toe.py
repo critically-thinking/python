@@ -22,9 +22,11 @@ def display_board(board):
     #rows
     for i in range(len(board)):        
         #columns
+        pass
         for j in range(len(board[i])):
-            if board[i][j] == xPlayer or  board[i][j] == oPlayer:
-                print("Choose an available space on the board")
+            pass
+        #if board[i][j] == xPlayer or  board[i][j] == oPlayer:
+        #print("Choose an available space on the board")
     return board
         
             
@@ -43,7 +45,6 @@ def display_board(board):
       #      return board    
 
 
-
 # enter_move()
 # Accepts board status (x)
 # requests move from user: PC ALWAYS GETS 1ST MOVE W/ X @ board[1][1] (x)
@@ -53,21 +54,39 @@ def display_board(board):
 def enter_move(board) ->tuple[list, int]:
     
     num_Moves = 1 # num_moves
-    if num_Moves % 2 == 1: # PC plays as X
+    while num_Moves % 2 == 1: # PC plays as X
         player = oPlayer
         print("PLAYER" + player + "make your move!")
         i = int(input("row number 0-2: "))
         j = int(input("column number 0-2: "))
+        # check if row/col selection out of bounds
+        while (i < 0 or i > 2) or (j < 0 or j > 2):
+            i = int(input("row number 0-2: "))
+            j = int(input("column number 0-2: "))
+        #out_of_bounds(board,i,j)
+        #num_Moves = num_Moves + 1
         board[i][j] = oPlayer
+        num_Moves = num_Moves + 1
 
-    elif num_Moves % 2 == 0: # human plays as O
+    while num_Moves % 2 == 0: # human plays as O
         player = xPlayer
         print("PLAYER" + player + "make your move!")
         i = int(input("row number 0-2: "))
         j = int(input("column number 0-2: "))
+        while (i < 0 or i > 2) or (j < 0 or j > 2):
+            i = int(input("row number 0-2: "))
+            j = int(input("column number 0-2: "))
         board[i][j] = xPlayer
+        num_Moves = num_Moves + 1
+
+        
+    """ # Check if board selection is out-of-bounds
+    out_of_bounds(board,i,j) """
+
+
+
     
-    num_Moves = num_Moves + 1
+    #num_Moves = num_Moves + 1
     return board, num_Moves
 
 """ def countMoves(board):
@@ -102,16 +121,21 @@ def make_list_of_free_fields(board):
 
 # Main Function
 def main():
+    # draw board + start game
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
     print("I,(the computer) have taken the firstmove. You have no say in the matter!")
+    print("Choose an available space on the board")
 
     # return updated game board after PC makes first move
-    boardStatus, totalMoves = enter_move(board) 
+    boardStatus, totalMoves = enter_move(board)
     print("game board after first move", boardStatus)
     print("total # of moves ", totalMoves)
 
-    #countMoves(board)
+    # Game continues while number of moves is less than 8
+    """ while totalMoves < 8:
+        board = display_board(gameBoard)
+    #countMoves(board) """
 
 main()
 
