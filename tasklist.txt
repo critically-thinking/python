@@ -1,0 +1,6 @@
+functions:
+
+draw_board() - complete (06/01/2024)
+enter_move() - in progress (06/01/2024)
+
+main() - complete
