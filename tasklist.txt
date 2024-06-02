@@ -1,6 +1,21 @@
 functions:
 
-draw_board() - complete (06/01/2024)
-enter_move() - in progress (06/01/2024)
+complete (06/01/2024)
+========================
+draw_board() 
+main()
 
-main() - complete
+
+in progress 06/01/2024
+========================
+make_list_of_free_fields()
+
+
+backlog
+========================
+enter_move() -
+victory_for()
+draw_move()
+
+
+ 
