@@ -9,6 +9,9 @@ oPlayer = "o"
 #occupiedSpaces = []
 gameBoard=[[1,2,3],[4,5,6],[7,8,9]]
 
+# Track number of moves in game - check for winner when moves >= 3
+#total_moves = 0
+
 # Draw game board
 
     # should accept 1 parameter containing current status of board
@@ -16,9 +19,13 @@ gameBoard=[[1,2,3],[4,5,6],[7,8,9]]
 def display_board(board):
 
     # initialize second row/ center column with "X" (PCgets first of game)
+    #global total_move
+    #total_moves = 0
+    print("I,(the computer) have taken the first move. You have no say in the matter!")
     board[1][1] = xPlayer
+    #total_moves = total_moves + 1
     
-    #Check board status
+    #DRAW + RETURN GAME BOARD
     #rows
     for i in range(len(board)):        
         #columns
@@ -54,7 +61,7 @@ def display_board(board):
 def enter_move(board) ->tuple[list, int]:
     
     num_Moves = 1 # num_moves
-    while num_Moves % 2 == 1: # PC plays as X
+    while  num_Moves % 2 == 1: # PC plays as X
         player = oPlayer
         print("PLAYER" + player + "make your move!")
         i = int(input("row number 0-2: "))
@@ -124,18 +131,17 @@ def main():
     # draw board + start game
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
-    print("I,(the computer) have taken the firstmove. You have no say in the matter!")
-    print("Choose an available space on the board")
+    #print("Choose an available space on the board")
 
     # return updated game board after PC makes first move
-    boardStatus, totalMoves = enter_move(board)
+    """ boardStatus, totalMoves = enter_move(board)
     print("game board after first move", boardStatus)
     print("total # of moves ", totalMoves)
 
     # Game continues while number of moves is less than 8
-    """ while totalMoves < 8:
-        board = display_board(gameBoard)
-    #countMoves(board) """
+    """# while totalMoves < 8:
+        #board = display_board(gameBoard)
+    #countMoves(board) """ """
 
 main()
 
