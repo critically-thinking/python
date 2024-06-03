@@ -123,7 +123,18 @@ def enter_move(board) ->tuple[list, int]:
 ##        print("available spaces are" ,i)
 
 def make_list_of_free_fields(board):
-    None
+    #None
+    free_Spaces = []
+    #check available spaces + build list
+    for i in range(len(board)):        
+        for j in range(len(board[i])):
+            if board[i][j] !="x" or board[i][j] != "o":
+                free_Spaces.append(board[i][j])
+                #free_Spaces.append(board[i][j])
+                #print(board[i][j])
+                #print("enter your move...")
+    return free_Spaces
+
     # analyzes board status to build list of fields available to play
 
 # Main Function
@@ -131,7 +142,10 @@ def main():
     # draw board + start game
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
-    #print("Choose an available space on the board")
+
+    available_Spaces = make_list_of_free_fields(board)
+    print("Spaces available are: ", available_Spaces)
+    
 
     # return updated game board after PC makes first move
     """ boardStatus, totalMoves = enter_move(board)
