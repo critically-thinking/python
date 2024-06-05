@@ -135,9 +135,6 @@ def make_list_of_free_fields(board):
                 indexPos = board[i][j]
                 print(indexPos)
                 free_Spaces.append(board[i][j])
-                #free_Spaces.append(board[i][j])
-                #print(board[i][j])
-                #print("enter your move...")
     return free_Spaces
 
     # analyzes board status to build list of fields available to play
