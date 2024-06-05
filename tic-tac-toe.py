@@ -128,7 +128,12 @@ def make_list_of_free_fields(board):
     #check available spaces + build list
     for i in range(len(board)):        
         for j in range(len(board[i])):
-            if board[i][j] !="x" or board[i][j] != "o":
+            #print(board[i][j])
+            if board[i][j] =="x" or board[i][j] == "o":
+                continue
+            else:
+                indexPos = board[i][j]
+                print(indexPos)
                 free_Spaces.append(board[i][j])
                 #free_Spaces.append(board[i][j])
                 #print(board[i][j])
