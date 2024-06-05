@@ -64,13 +64,13 @@ def enter_move(board) ->tuple[list, int]:
     num_Moves = 1 # num_moves
     while num_Moves % 2 == 1: # PC always plays as X
         #player = oPlayer
-        player = input("PLAYER {} " + " Enter number 1-9:")
+        player = int(input("PLAYER {} " + " Enter number 1-9:"))
         print(player)
         num_Moves = num_Moves + 1
     else:
         #player = xPlayer
         #print("PLAYER " + player + "make your move!")
-        player = input("PLAYER {} " + " Enter number 1-9:")
+        player = int(input("PLAYER {} " + " Enter number 1-9:"))
         print(player)
         num_Moves = num_Moves + 1
         """ i = int(input("row number 0-2: "))
