@@ -60,11 +60,17 @@ def display_board(board):
 # return updated gameBoard
 def enter_move(board) ->tuple[list, int]:
     
+    # Assign user moves
     num_Moves = 1 # num_moves
-    while  num_Moves % 2 == 1: # PC plays as X
+    while num_Moves % 2 == 1: # PC always plays as X
         player = oPlayer
-        print("PLAYER" + player + "make your move!")
-        i = int(input("row number 0-2: "))
+        print("PLAYER " + player + "make your move!")
+        num_Moves = num_Moves + 1
+    else:
+        player = xPlayer
+        print("PLAYER " + player + "make your move!")
+        num_Moves = num_Moves + 1
+        """ i = int(input("row number 0-2: "))
         j = int(input("column number 0-2: "))
         # check if row/col selection out of bounds
         while (i < 0 or i > 2) or (j < 0 or j > 2):
@@ -72,10 +78,10 @@ def enter_move(board) ->tuple[list, int]:
             j = int(input("column number 0-2: "))
         #out_of_bounds(board,i,j)
         #num_Moves = num_Moves + 1
-        board[i][j] = oPlayer
-        num_Moves = num_Moves + 1
+        board[i][j] = oPlayer """
+        #num_Moves = num_Moves + 1 """
 
-    while num_Moves % 2 == 0: # human plays as O
+    """ while num_Moves % 2 == 0: # human plays as O
         player = xPlayer
         print("PLAYER" + player + "make your move!")
         i = int(input("row number 0-2: "))
@@ -84,7 +90,7 @@ def enter_move(board) ->tuple[list, int]:
             i = int(input("row number 0-2: "))
             j = int(input("column number 0-2: "))
         board[i][j] = xPlayer
-        num_Moves = num_Moves + 1
+        num_Moves = num_Moves + 1 """
 
         
     """ # Check if board selection is out-of-bounds
@@ -94,7 +100,7 @@ def enter_move(board) ->tuple[list, int]:
 
     
     #num_Moves = num_Moves + 1
-    return board, num_Moves
+    return board,num_Moves
 
 """ def countMoves(board):
     count = 0
@@ -145,6 +151,12 @@ def main():
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
 
+    # ENTER_MOVE()
+    board_current, totalMoves = enter_move(board)
+    print("current board status @ enter_move(): ", board_current)
+    print("total number of moves in game: ", totalMoves)
+
+    # BROWSE BOARD + BUILD LIST OF FREE SPACES
     available_Spaces = make_list_of_free_fields(board)
     print("Spaces available are: ", available_Spaces)
     
