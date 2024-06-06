@@ -64,15 +64,21 @@ def enter_move(board) ->tuple[list, int]:
     num_Moves = 1 # num_moves
     while num_Moves % 2 == 1: # PC always plays as X
         #player = oPlayer
-        player = int(input("PLAYER {} " + " Enter number 1-9:"))
-        print(player)
+        board_Selection = int(input("PLAYER {} " + " Enter number 1-9:"))
+        #print(board[0])
+        if board_Selection in board:
+            print("it's there!")
+            board[board_Selection-1] = oPlayer
+        # print(board_Selection)
         num_Moves = num_Moves + 1
+        return board, num_Moves
     else:
         #player = xPlayer
         #print("PLAYER " + player + "make your move!")
-        player = int(input("PLAYER {} " + " Enter number 1-9:"))
-        print(player)
+        board_Selection = int(input("PLAYER {} " + " Enter number 1-9:"))
+        print(board_Selection)
         num_Moves = num_Moves + 1
+        return board, num_Moves
         """ i = int(input("row number 0-2: "))
         j = int(input("column number 0-2: "))
         # check if row/col selection out of bounds
@@ -134,7 +140,7 @@ def enter_move(board) ->tuple[list, int]:
 def make_list_of_free_fields(board):
     #None
     free_Spaces = []
-    #check available spaces + build list
+    #check available spaces + build list 
     for i in range(len(board)):        
         for j in range(len(board[i])):
             #print(board[i][j])
@@ -142,7 +148,7 @@ def make_list_of_free_fields(board):
                 continue
             else:
                 indexPos = board[i][j]
-                print(indexPos)
+                #print(indexPos)
                 free_Spaces.append(board[i][j])
     return free_Spaces
 
@@ -154,14 +160,15 @@ def main():
     board = display_board(gameBoard)
     print("STARTING GAME: game board" , board)
 
+    # BROWSE BOARD + BUILD LIST OF FREE SPACES
+    board_available_Spaces = make_list_of_free_fields(board)
+    print("Spaces available are: ", board_available_Spaces)
+
     # ENTER_MOVE()
-    board_current, totalMoves = enter_move(board)
+    board_current, totalMoves = enter_move(board_available_Spaces)
     print("current board status @ enter_move(): ", board_current)
     print("total number of moves in game: ", totalMoves)
 
-    # BROWSE BOARD + BUILD LIST OF FREE SPACES
-    available_Spaces = make_list_of_free_fields(board)
-    print("Spaces available are: ", available_Spaces)
     
 
     # return updated game board after PC makes first move
