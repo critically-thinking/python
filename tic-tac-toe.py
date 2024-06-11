@@ -59,6 +59,13 @@ def display_board(board):
 # update board per user input
 # return updated gameBoard
 def enter_move(board) ->tuple[list, int]:
+
+    #PC always gets first move (x at center of board)
+    #global total_move
+    num_Moves = 0
+    print("I,(the computer) have taken the first move. You have no say in the matter!")
+    board[1][1] = xPlayer
+    num_Moves = num_Moves + 1
     
     # Assign user moves
     num_Moves = 1 # num_moves
@@ -165,13 +172,13 @@ def main():
     print("STARTING GAME: game board" , board)
 
     # BROWSE BOARD + BUILD LIST OF FREE SPACES
-    board_available_Spaces = make_list_of_free_fields(board)
-    print("Spaces available are: ", board_available_Spaces)
+    #board_available_Spaces = make_list_of_free_fields(board)
+    #print("Spaces available are: ", board_available_Spaces)
 
     # ENTER_MOVE()
-    board_current, totalMoves = enter_move(board_available_Spaces)
-    board_current1=make_list_of_free_fields(board_available_Spaces)
-    print("Spaces available for board_current1 are: ", board_current1)
+    board_current, totalMoves = enter_move(board)
+    #board_current1=make_list_of_free_fields(board_available_Spaces)
+    #print("Spaces available for board_current1 are: ", board_current1)
     #print("current board status @ enter_move(): ", board_current)
     #print("total number of moves in game: ", totalMoves)
 
