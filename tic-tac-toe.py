@@ -17,21 +17,21 @@ gameBoard=[[1,2,3],[4,5,6],[7,8,9]]
     # should accept 1 parameter containing current status of board
     # print board status to console
 def display_board(board):
+    print(board)
 
     # initialize second row/ center column with "X" (PCgets first of game)
     #global total_move
     #total_moves = 0
-    print("I,(the computer) have taken the first move. You have no say in the matter!")
-    board[1][1] = xPlayer
+    #print("I,(the computer) have taken the first move. You have no say in the matter!")
+    #board[1][1] = xPlayer
     #total_moves = total_moves + 1
     
     #DRAW + RETURN GAME BOARD
     #rows
-    for i in range(len(board)):        
-        #columns
-        pass
-        for j in range(len(board[i])):
-            pass
+    #for i in range(len(board)):      
+     #   for j in range(len(board[i])):
+      #      print(board[i][j])
+            #pass
         #if board[i][j] == xPlayer or  board[i][j] == oPlayer:
         #print("Choose an available space on the board")
     return board
