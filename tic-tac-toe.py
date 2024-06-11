@@ -71,6 +71,10 @@ def enter_move(board) ->tuple[list, int]:
             board[board_Selection-1] = oPlayer
         # print(board_Selection)
         num_Moves = num_Moves + 1
+        
+        #send newly updated gameboard to make_list_of_avail_spaces
+        #make_list_of_free_fields(board[board_Selection-1])
+
         return board, num_Moves
     else:
         #player = xPlayer
@@ -166,8 +170,10 @@ def main():
 
     # ENTER_MOVE()
     board_current, totalMoves = enter_move(board_available_Spaces)
-    print("current board status @ enter_move(): ", board_current)
-    print("total number of moves in game: ", totalMoves)
+    board_current1=make_list_of_free_fields(board_available_Spaces)
+    print("Spaces available for board_current1 are: ", board_current1)
+    #print("current board status @ enter_move(): ", board_current)
+    #print("total number of moves in game: ", totalMoves)
 
     
 
