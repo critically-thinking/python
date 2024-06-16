@@ -61,21 +61,30 @@ def display_board(board):
 def enter_move(board) ->tuple[list, int]:
 
     #PC always gets first move (x at center of board)
-    #global total_move
+    #global total_move 
+    # THIS PROBALY NEEDS TO GOBACK TO DISPLAY BOARD FUNCTION!
     num_Moves = 0
     print("I,(the computer) have taken the first move. You have no say in the matter!")
     board[1][1] = xPlayer
     num_Moves = num_Moves + 1
     
-    # Assign user moves
+    #LOOK@ GAME BOARD
+   
+
+# Assign user moves
     num_Moves = 1 # num_moves
     while num_Moves % 2 == 1: # PC always plays as X
         #player = oPlayer
         board_Selection = int(input("PLAYER {} " + " Enter number 1-9:"))
         #print(board[0])
-        if board_Selection in board:
-            print("it's there!")
-            board[board_Selection-1] = oPlayer
+        
+        # check space available for play (look at game board)
+        for i in range(len(board)):        
+                #columns
+                for j in range(len(board[i])):
+                    if board_Selection in board[0] or board_Selection in board[1] or board_Selection in board[2]:
+                        print("it's there!")
+                        board[board_Selection-1] = oPlayer
         # print(board_Selection)
         num_Moves = num_Moves + 1
         
@@ -84,8 +93,8 @@ def enter_move(board) ->tuple[list, int]:
 
         return board, num_Moves
     else:
-        #player = xPlayer
-        #print("PLAYER " + player + "make your move!")
+    #player = xPlayer
+    #print("PLAYER " + player + "make your move!")
         board_Selection = int(input("PLAYER {} " + " Enter number 1-9:"))
         print(board_Selection)
         num_Moves = num_Moves + 1
